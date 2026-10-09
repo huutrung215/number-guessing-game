@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏆 Bảng Xếp Hạng</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>🏆 Bảng Xếp Hạng</h1>
+            <p class="subtitle">Top 10 người đoán đúng nhiều nhất</p>
+
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                Đang tải...
+            </div>
+
+            <div id="leaderboard" class="leaderboard-list"></div>
+
+            <p class="link">
+                <a href="/game.html">← Về trang chơi</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/leaderboard.js"></script>
+</body>
+</html>

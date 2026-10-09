@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/guess_game
+    username: postgres
+    password: 123456a@
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+
+app:
+  jwt:
+    secret: "ThisIsAVeryLongSecretKeyForJwtSigningMustBeAtLeast32BytesLong"
+    expiration-ms: 86400000   # 24h
+  game:
+    win-rate: 0.05            # 5% tỉ lệ thắng
+    start-turns: 10
+    buy-turns-amount: 5
+    turn-price-vnd: 10000        # 10,000 VND cho 5 lượt
+
+vnpay:
+  tmn-code: "YOUR_TMN_CODE"
+  hash-secret: "YOUR_HASH_SECRET"
+  pay-url: "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html"
+  return-url: " https://udder-list-bust.ngrok-free.dev/api/payment/vnpay-return"
+  ipn-url: " https://udder-list-bust.ngrok-free.dev/api/payment/vnpay-ipn"
+  version: "2.1.0"
+  command: "pay"
+  curr-code: "VND"
+  order-type: "other"
+  locale: "vn"
+

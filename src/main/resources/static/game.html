@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Game Đoán Số</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container" style="max-width: 560px;">
+        <div class="card">
+            <div class="game-header">
+                <div class="user-info">
+                    <div class="avatar" id="avatar">?</div>
+                    <div>
+                        <div class="username" id="username-display">...</div>
+                        <button class="logout" onclick="logout()">Đăng xuất</button>
+                    </div>
+                </div>
+                <a href="/leaderboard.html" style="color: var(--primary); text-decoration: none; font-size: 14px;">
+                    🏆 BXH
+                </a>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-label">Điểm số</div>
+                    <div class="stat-value score" id="score">0</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">Lượt còn lại</div>
+                    <div class="stat-value" id="turns">0</div>
+                </div>
+            </div>
+
+            <div id="alert" class="alert"></div>
+
+            <div class="result" id="result">
+                <div class="result-title" id="result-title"></div>
+                <div id="result-message"></div>
+            </div>
+
+            <div class="guess-area">
+                <h2>Chọn số từ 1 đến 5</h2>
+                <div class="numbers" id="numbers">
+                    <button class="number-btn" onclick="guess(1)">1</button>
+                    <button class="number-btn" onclick="guess(2)">2</button>
+                    <button class="number-btn" onclick="guess(3)">3</button>
+                    <button class="number-btn" onclick="guess(4)">4</button>
+                    <button class="number-btn" onclick="guess(5)">5</button>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-success" onclick="buyTurns()" id="buy-btn">
+                    💰 Mua thêm 5 lượt
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Game Đoán Số - Đăng nhập</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>🎮 Game Đoán Số</h1>
+            <p class="subtitle">Đoán đúng số từ 1-5 để nhận điểm</p>
+
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('login')">Đăng nhập</button>
+                <button class="tab" onclick="switchTab('register')">Đăng ký</button>
+            </div>
+
+            <div id="alert" class="alert"></div>
+
+            <form id="auth-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="username">Tên đăng nhập</label>
+                    <input type="text" id="username" required minlength="3" maxlength="50"
+                           placeholder="Ít nhất 3 ký tự" autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" id="password" required minlength="6" maxlength="100"
+                           placeholder="Ít nhất 6 ký tự" autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn" id="submit-btn">Đăng nhập</button>
+            </form>
+
+            <p class="link">
+                <a href="/leaderboard.html">🏆 Xem bảng xếp hạng</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/auth.js"></script>
+</body>
+</html>
